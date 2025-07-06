@@ -1,17 +1,9 @@
-# ✅ requirements.txt 내용
-'''
-streamlit
-pandas
-plotly
-'''
-
-# ✅ app.py (혹은 ERP.py) 전체 코드
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# CSV 파일 로드
-df = pd.read_csv("출고리스트_MVP_Sample.csv")
+# 엑셀 파일 불러오기
+df = pd.read_excel("테스트파일.xlsx")
 
 st.title("📦 물류센터 출고 관리 대시보드")
 
@@ -56,5 +48,3 @@ st.download_button(
     file_name='출고리스트_다운로드.csv',
     mime='text/csv'
 )
-
-# PDF, 추가 보고서는 추후 기능으로 확장 가능!
