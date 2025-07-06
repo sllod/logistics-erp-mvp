@@ -2,8 +2,12 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# CSV 파일 로드
-df = pd.read_csv("출고리스트_MVP_Sample.csv")
+# 엑셀 파일 불러오기
+df = pd.read_excel("테스트파일.xlsx")
+
+# 금액 컬럼 숫자로 변환
+df['원화금액'] = pd.to_numeric(df['원화금액'], errors='coerce')
+df['출하수량'] = pd.to_numeric(df['출하수량'], errors='coerce')
 
 st.title("📦 물류센터 출고 관리 대시보드")
 
@@ -49,4 +53,3 @@ st.download_button(
     mime='text/csv'
 )
 
-# PDF, 추가 보고서는 추후 기능으로 확장 가능!
