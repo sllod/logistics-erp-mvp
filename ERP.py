@@ -1,3 +1,11 @@
+# ✅ requirements.txt 내용
+'''
+streamlit
+pandas
+plotly
+'''
+
+# ✅ app.py (혹은 ERP.py) 전체 코드
 import streamlit as st
 import pandas as pd
 import plotly.express as px
